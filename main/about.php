@@ -1,5 +1,8 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <?php include 'header.php'; ?>
-<link rel="stylesheet" href="style.css">
 
 <section class="section active" id="about">
   <div class="about">

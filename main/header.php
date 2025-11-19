@@ -1,12 +1,10 @@
 <?php ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
-
-    <!-- FIXED: Correct path (use ../ instead of ..// ) -->
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -24,3 +22,5 @@
         </ul>
     </nav>
 </header>
+
+</body>

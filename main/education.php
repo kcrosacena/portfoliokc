@@ -1,6 +1,8 @@
-<?php include 'header.php'; ?>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-<link rel="stylesheet" href="style.css">
+<?php include 'header.php'; ?>
 
 <section class="section active" id="education">
       <h2>Educational Background</h2>

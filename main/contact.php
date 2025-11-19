@@ -1,6 +1,9 @@
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
 <?php include 'header.php'; ?>
 
-<link rel="stylesheet" href="style.css">
 <section class="section active" id="contact">
   <h2>Contact Details</h2>
   <div class="contact-box">
