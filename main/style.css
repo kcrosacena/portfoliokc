@@ -1,0 +1,331 @@
+:root {
+  --bg: #fefefe;
+  --text: #333;
+  --header-bg: #0f0f0f;
+  --header-text: #fff;
+  --accent: #f76767;
+  --box-bg: #f9f8fa;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --toggle-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg: #0b1020;
+  --text: #e6eef8;
+  --header-bg: #111827;
+  --header-text: #ffffff;
+  --accent: #f76767;
+  --box-bg: #1e293b;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Calibri", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--header-text);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  background: var(--header-text);
+  border: 2px solid var(--accent);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: gold;
+  border-color: gold;
+}
+
+/* ===== SECTION GENERAL ===== */
+section {
+  display: none;
+  padding: 100px 40px;
+  min-height: 100vh;
+  animation: fade 0.5s ease-in-out;
+}
+
+.section.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== HERO ===== */
+.hero-content {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  color: var(--text);
+}
+
+.hero-content span {
+  color: var(--accent);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--text);
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img img {
+  width: 250px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+.about-text h2 {
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+/* ===== INFO BOX ===== */
+.info-box {
+  background: var(--box-bg);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+
+.info-box ul {
+  list-style: none;
+  line-height: 2;
+}
+
+/* ===== EDUCATION ===== */
+.education-box {
+  display: grid;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.edu-item {
+  border-left: 4px solid var(--accent);
+  padding-left: 15px;
+  background: var(--box-bg);
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+
+/* ===== CONTACT ===== */
+.contact-box {
+  background: var(--box-bg);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px var(--shadow);
+}
+
+.contact-box a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--header-bg);
+  color: var(--header-text);
+  transition: 0.3s ease;
+}
+
+/* ===== LOGIN / REGISTER PAGE ===== */
+#login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('background.jpg') no-repeat center center/cover;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+.login-box,
+.register-box {
+  background: var(--box-bg);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--shadow);
+  width: 300px;
+  text-align: center;
+}
+
+.login-box h2,
+.register-box h2 {
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.login-box input,
+.register-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #0c0c0c;
+  outline: none;
+}
+
+.login-box button,
+.register-box button {
+  width: 100%;
+  padding: 10px;
+  background: var(--accent);
+  color: #141414;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-box button:hover,
+.register-box button:hover {
+  background: #050505;
+  color: #fff;
+}
+
+.forgot-link {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Hidden form toggle */
+.hidden-form {
+  display: none;
+}
+
+/* Toggle link for switching forms */
+#toggleRegister {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+#toggleRegister:hover {
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about {
+    flex-direction: column;
+  }
+
+  .login-box,
+  .register-box {
+    width: 90%;
+    padding: 30px;
+  }
+}
